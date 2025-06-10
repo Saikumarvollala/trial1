@@ -1,0 +1,261 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.options-group {
+    margin-bottom: 25px;
+}
+
+.option-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative; /* For the radio button positioning */
+}
+
+.option-box.selected-option {
+    border-color: #28a745; /* Green border for selected */
+    background-color: #e6f7ed; /* Light green background */
+}
+
+.option-box label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option-box input[type="radio"] {
+    margin-right: 15px;
+    margin-top: 5px; /* Adjust alignment with text */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+.option-box input[type="radio"]:checked {
+    border-color: #28a745; /* Green border when checked */
+}
+
+.option-box input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #28a745; /* Green inner circle */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.option-details {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pairs-count {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #28a745; /* Green color for price */
+    margin-top: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.discount {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #555;
+    margin-left: 10px; /* Space between price info and discount */
+}
+
+.most-popular {
+    background-color: #ffeb3b; /* Yellow background for "Most Popular" */
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Size and Color Options for 1 Pair */
+.size-color-options {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+    display: none; /* Hidden by default */
+}
+
+.size-color-options .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.size-color-options .header-row {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.size-color-options .label-text {
+    flex: 1;
+    text-align: center;
+}
+
+.size-color-options .label-number {
+    width: 30px; /* Adjust as needed */
+    flex-shrink: 0;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.size-color-options select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.size-color-options select:last-child {
+    margin-right: 0;
+}
+
+/* Shipping and Total */
+.shipping-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.shipping-info {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.total-amount {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+
+    .option-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .discount, .most-popular {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .size-color-options select {
+        flex-basis: calc(50% - 5px); /* Two columns on smaller screens */
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .size-color-options .row {
+        flex-wrap: wrap;
+    }
+
+    .size-color-options .label-number {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
